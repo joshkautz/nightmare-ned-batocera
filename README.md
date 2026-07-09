@@ -128,15 +128,13 @@ selecting the menu entry lands you in gameplay with no further clicks.
 
 ### Exiting the game / returning to Batocera
 
-**With a controller:** the Batocera flatpak exit hotkey (Hotkey + Start — on a DualSense the
-Hotkey is the PS button) runs `flatpak kill $(flatpak ps --columns=application | head -n 1)`.
+Both methods quit **all** of 86Box and return to the Batocera menu (no `confirm_exit` prompt —
+`confirm_exit = 0` is set in `86box_global.cfg`):
 
-**With a keyboard** (Batocera is navigated by keyboard here), use 86Box's own shortcuts — they
-work even in fullscreen with the mouse captured:
-
-1. `Ctrl + End` — release the captured mouse (cursor returns to the host)
-2. `Ctrl + Alt + PgDn` — leave fullscreen into windowed 86Box (reveals the menu bar)
-3. **Action → Exit** (or close the window / `Alt + F4`)
+- **Controller (DualSense):** **PS button + Options** — Batocera's standard exit-game hotkey
+  (`hotkey + start`), which runs `flatpak kill $(flatpak ps --columns=application | head -n 1)`.
+- **Mouse / keyboard:** **middle-click** (or `Ctrl + End`) to release 86Box's mouse grab, then
+  **`Alt + F4`** to quit the emulator. Simple and instant.
 
 When 86Box closes, EmulationStation returns to the foreground at the game menu.
 

@@ -115,6 +115,16 @@ Copy the game's Start Menu shortcut into the StartUp folder so Windows launches 
 Select **Nightmare Ned** in Batocera → the VM boots (no CD menu, no password) → the game
 **auto-launches fullscreen**. ~700 MB on disk, ~332 MB actually used.
 
+## Exiting the game
+
+Both quit *all* of 86Box and return you to the Batocera menu (no need to shut Windows down —
+it's a CD game that barely writes to disk):
+
+- **Controller:** **Hotkey + Start** (on a DualSense, the **PS** button + **Options**) — Batocera's
+  standard exit-game combo; runs `flatpak kill`.
+- **Mouse/keyboard:** **middle-click** (or `Ctrl+End`) to release 86Box's mouse grab, then
+  **`Alt+F4`** to quit. Instant, since `confirm_exit = 0` in `86box_global.cfg`.
+
 ## Gotchas (learned the hard way)
 
 - **`.cue` case-sensitivity** on Linux — match the `.bin` filename case exactly.
