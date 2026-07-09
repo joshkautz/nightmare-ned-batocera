@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+	<formatVersion>7</formatVersion>
+	<view name="system">
+		<!-- The transparent PNG of the Dell tower + CRT + keyboard -->
+		<image name="sysbg-video">
+			<path>/userdata/themes/ckau-book/_inc/pc/windows98-pc.png</path>
+			<color>ffffffff</color>
+			<origin>0.5 0.5</origin>
+			<pos>0.5 0.46</pos>
+			<size>0.42 0.56</size>
+		</image>
+		<!-- The game trailer, sized/positioned to sit on the CRT screen -->
+		<video name="videobox">
+			<origin>0.5 0.5</origin>
+			<pos>0.552 0.382</pos>
+			<size>0.195 0.28</size>
+		</video>
+		<text name="TextDate">
+			<text>1998</text>
+		</text>
+		<text name="TextManufacturer">
+			<text>Microsoft</text>
+		</text>
+		<text name="TextName">
+			<text>Windows 98</text>
+		</text>
+		<text name="TextDesc">
+			<text>Windows 98 is a consumer-oriented operating system developed by Microsoft as part of its Windows 9x family, released to retail on June 25, 1998. A successor to Windows 95, it is a hybrid 16-/32-bit product that boots atop an MS-DOS stage.
+
+It introduced broad USB support, the FAT32 file system, multiple-monitor and AGP support, the Windows Driver Model, and a Web-integrated shell built around Internet Explorer. Windows 98 Second Edition (1999) refined it with improved USB, Internet Connection Sharing, and stability fixes. It was succeeded by Windows Me in 2000.</text>
+		</text>
+	</view>
+</theme>
