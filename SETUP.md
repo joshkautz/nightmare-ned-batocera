@@ -101,6 +101,10 @@ Copy the game's Start Menu shortcut into the StartUp folder so Windows launches 
 - Fullscreen that fills the screen at 4:3: in `86box.cfg`, `start_in_fullscreen = 1` and
   **`video_fullscreen_scale = 1`** (both already in the repo config). Without the latter,
   fullscreen renders 1:1 in a corner.
+  - **Gotcha:** 86Box *drops* `video_fullscreen_scale` when it rewrites the config on exit, so
+    it reverts on the next cold boot. Lock it: after the config is final, make it read-only —
+    `chmod 444 86box.cfg`. 86Box reads it fine on launch but can no longer overwrite it. (To
+    change settings later, `chmod 644`, edit, then `chmod 444` again.)
 - Make the Batocera menu entry launch the VM: install the patched [`vm/86Box.sh`](vm/86Box.sh)
   over the flatpak's `bin/86Box.sh` (keep a `.orig` backup). With no arguments (how Batocera
   launches it) it boots the "Nightmare Ned" VM fullscreen.
@@ -117,6 +121,7 @@ Select **Nightmare Ned** in Batocera → the VM boots (no CD menu, no password) 
 - **CD-ROM Startup Menu** defaults to Hard Disk — pick CD-ROM (2) only to *start* the installer;
   Hard Disk (1) every time after.
 - **HiDPI scaling** shrinks the render → `dpi_scale = 0`.
-- **`video_fullscreen_scale = 1`** is required or fullscreen is a tiny 1:1 image in the corner.
+- **`video_fullscreen_scale = 1`** is required or fullscreen is a tiny 1:1 image in the corner —
+  and 86Box drops it on exit, so `chmod 444` the config to lock it in.
 - The bootable Win98 install CD keeps showing the boot menu; swapping to the (non-bootable)
   game `.cue` makes it boot straight to Windows.
